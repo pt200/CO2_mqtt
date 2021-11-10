@@ -1,0 +1,46 @@
+#
+# This is a project Makefile. It is assumed the directory this Makefile resides in is a
+# project subdirectory.
+#
+
+PROJECT_NAME := CO2_mqtt
+
+MY_PROJECT_PATH := $(abspath $(dir $(firstword $(MAKEFILE_LIST))))
+
+#EXTRA_COMPONENT_DIRS = $(IDF_PATH)/examples/common_components/protocol_examples_common $(MY_PROJECT_PATH)/../esp8266_base_code
+EXTRA_COMPONENT_DIRS = $(MY_PROJECT_PATH)/../esp8266_base_code
+
+
+#COMPONENT_SUBMODULES += ./../esp8266_base_code
+
+#COMPONENT_SRCDIRS := main $(PROJECT_PATH435)/../esp8266_base_code/src
+#COMPONENT_ADD_INCLUDEDIRS = include $(PROJECT_PATH435)/../esp8266_base_code/include
+
+
+#$(info PROJECT_PATH435 is [${PROJECT_PATH435}])
+#$(info COMPONENT_SRCDIRS is [${COMPONENT_SRCDIRS}])
+#$(info COMPONENT_ADD_INCLUDEDIRS is [${COMPONENT_ADD_INCLUDEDIRS}])
+#$(warning 8n9734v897563978345)
+#$(error f8n9734v897563978345)
+
+#ifndef PROJECT_PATH
+#export PROJECT_PATH
+#endif
+
+
+
+#COMPONENT_SRCDIRS := main $(PROJECT_PATH)/../esp8266_base_code/src
+#COMPONENT_ADD_INCLUDEDIRS := include $(PROJECT_PATH)/../esp8266_base_code/include
+
+
+#COMPONENT_ADD_INCLUDEDIRS := esp-mqtt/include
+#COMPONENT_SRCDIRS :=  esp-mqtt esp-mqtt/lib
+
+#COMMON_MAKEFILES := $(abspath $(IDF_PATH)/make/project.mk $(IDF_PATH)/make/common.mk $(IDF_PATH)/make/version.mk $(IDF_PATH)/make/component_wrapper.mk $(firstword $(MAKEFILE_LIST)))
+#$(warning SRCDIRS variable is deprecated. These paths can be added to EXTRA_COMPONENT_DIRS or COMPONENT_DIRS instead.)
+
+#COMPONENT_DIRS := $(PROJECT_PATH)/components $(EXTRA_COMPONENT_DIRS) $(IDF_PATH)/components $(PROJECT_PATH)/main
+
+
+include $(IDF_PATH)/make/project.mk
+
